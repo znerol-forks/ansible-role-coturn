@@ -35,7 +35,11 @@
   notify: restart coturn
 
 - when: ansible_service_mgr == "systemd"
-  import_tasks: systemd.yml
+  block:
+    - import_tasks: systemd.yml
+
+    - name: reload systemd before starting coturn
+      meta: flush_handlers
 
 - name: start coturn
   service:

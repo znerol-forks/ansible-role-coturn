@@ -2,7 +2,6 @@
 
 
 - name: reload systemd
-  when: coturn_cap_net_bind_result is changed
   systemd:
     daemon_reload: true
 

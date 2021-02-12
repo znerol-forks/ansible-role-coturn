@@ -30,6 +30,3 @@
       file:
         state: absent
         path: /etc/systemd/system/coturn.service.d/01-cap-net-bind.conf
-
-- name: reload systemd and restart coturn if necessary
-  meta: flush_handlers
